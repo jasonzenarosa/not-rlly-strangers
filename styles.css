@@ -20,21 +20,27 @@ body {
 .right-side, .left-side {
     width: 50vw;
     height: 100vh;
-}
-
-.left-side, .right-side {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;   
+}
+
+.title {
+    margin-bottom: 5vh;
+}
+
+.deck {
+    background-color: var(--blood-red);
+    color: white;
+    border: none;
 }
 
 .left-side {
     background-color: var(--blood-red);
     color: white;
-}
-
-.right-side {
-    flex-direction: column;
+    text-align: center;
+    justify-content: center;
 }
 
 .card-container {
@@ -44,7 +50,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 40px;
+    border-radius: 5vh;
     box-shadow: 2px 2px 5px;
 }
 
@@ -52,7 +58,7 @@ body {
     color: var(--blood-red);
     font-size: larger;
     text-align: center;
-    margin: 5vh;
+    margin: 7vh;
 }
 
 .draw {
@@ -61,7 +67,7 @@ body {
     color: white;
     height: 5vh;
     width: 15vh;
-    border-radius: 5px;
+    border-radius: 1vh;
     transition-duration: 0.4s;
 }
 
