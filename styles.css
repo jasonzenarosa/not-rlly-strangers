@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+
+:root {
+    --blood-red: #9a0115;
+    --shadow: #9a011598;
+}
+
+* {
+    font-family: 'Work Sans';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+body {
+    display: flex;
+}
+
+.right-side, .left-side {
+    width: 50vw;
+    height: 100vh;
+}
+
+.left-side, .right-side {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;   
+}
+
+.left-side {
+    background-color: var(--blood-red);
+    color: white;
+}
+
+.right-side {
+    flex-direction: column;
+}
+
+.card-container {
+    height: 35vh;
+    width: 50vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 2px 2px 5px;
+}
+
+.card {
+    color: var(--blood-red);
+    font-size: larger;
+    text-align: center;
+    margin: 5vh;
+}
+
+.draw {
+    background-color: var(--blood-red);
+    border: 3px solid var(--blood-red);
+    color: white;
+    height: 5vh;
+    width: 15vh;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+}
+
+.draw:hover {
+    background-color: white;
+    color: var(--blood-red);
+    text-shadow: 1px 1px 1px var(--shadow);
+}

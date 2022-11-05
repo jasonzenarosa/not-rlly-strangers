@@ -9,8 +9,8 @@ function drawCard(deck) {
 }
 
 function changeCardText(text) {
-    card.textContent = text;
+    card.textContent = text.toUpperCase();
 }
 
 changeCardText(drawCard(levelOne))
-button.addEventListener("click", _ => changeCardText(drawCard(levelOne)))
+button.addEventListener("click", _ => changeCardText(drawCard(levelOne)));
