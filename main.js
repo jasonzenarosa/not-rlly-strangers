@@ -10,21 +10,34 @@ function drawCard(deck) {
     return deck[randomCardIndex];
 }
 
-function changeCardText(text) {
-    card.textContent = text.toUpperCase();
+function changeCardText() {
+    clearInterval(timer)
+    var op = 0;
+    card.style.opacity = 0
+    card.textContent = drawCard(cur_deck).toUpperCase();
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+            return
+        }
+        card.style.opacity = op;
+        op *= 100;
+        op += 1;
+        op /= 100;
+    }, 10);
 }
 
 function setCurDeck(event) {
-    console.log(event.target.value)
+    console.log(event.target.value);
     if (event.target.value == 'l1') {
         cur_deck = levelOne;
     } else if (event.target.value == 'l2') {
-        cur_deck = levelTwo
+        cur_deck = levelTwo;
     } else if (event.target.value == 'l3') {
-        cur_deck = levelThree
+        cur_deck = levelThree;
     }
 }
 
-changeCardText(drawCard(cur_deck))
-button.addEventListener("click", _ => changeCardText(drawCard(cur_deck)));
-options.addEventListener("change", setCurDeck)
+changeCardText(drawCard(cur_deck));
+button.addEventListener("click", changeCardText);
+options.addEventListener("change", setCurDeck);
