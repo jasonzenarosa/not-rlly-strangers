@@ -4,10 +4,10 @@ let options = document.getElementById('deck')
 let cur_deck = 'level1';
 
 
-function drawCard() {
-    fetch(`https://not-rlly-strangers-api.herokuapp.com//${cur_deck}`)
-    .then(response => response.json())
-    .then(json => card.textContent = json.card.toUpperCase())
+async function drawCard() {
+    let response = await fetch(`https://not-rlly-strangers-api.herokuapp.com//${cur_deck}`)
+    let cardContent = await response.json()
+    card.textContent = cardContent.card.toUpperCase()
 }
 
 function setCurDeck(event) {
