@@ -5,7 +5,7 @@ let cur_deck = 'level1';
 
 
 async function drawCard() {
-    let response = await fetch(`https://not-rlly-strangers-api.herokuapp.com//${cur_deck}`)
+    let response = await fetch(`https://not-rlly-strangers.herokuapp.com//${cur_deck}`)
     let cardContent = await response.json()
     card.textContent = cardContent.card.toUpperCase()
 }
